@@ -15,11 +15,11 @@ class PagesController extends Controller
 
     public function customerList()
     {   
-        $title = 'Welcome to NSW';
+        $title = 'Customer list';
         $data = array(
             'name'=> 'Iman',
             'email'=>'iman@bitmascot.com'
         );
-        return view("pages.customer-list", compact('data'));
+        return view("pages.customer-list", compact('title'));
     }
 }

@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>{{$data['name']}}</h1>    
+    <h1>{{$title}}</h1>    
 @endsection
