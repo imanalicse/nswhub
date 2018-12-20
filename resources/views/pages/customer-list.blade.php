@@ -1,16 +1,5 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>NSW | Cusotmer List</title>
-
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-    </head>
-    <body>
-       <h1>Cusotmer List</h1>
-    </body>
-</html>
+@section('content')
+    <h1>{{$data['name']}}</h1>    
+@endsection

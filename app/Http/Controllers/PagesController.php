@@ -8,11 +8,18 @@ class PagesController extends Controller
 {
     public function index()
     {
-        return view("pages.index");
+        $title = 'Welcome to NSW';
+        //return view("pages.index", compact('title'));
+        return view("pages.index")->with('title', $title);
     }
 
     public function customerList()
     {   
-        return view("pages.customer-list");
+        $title = 'Welcome to NSW';
+        $data = array(
+            'name'=> 'Iman',
+            'email'=>'iman@bitmascot.com'
+        );
+        return view("pages.customer-list", compact('data'));
     }
 }
