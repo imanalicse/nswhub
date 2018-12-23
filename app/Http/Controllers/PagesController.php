@@ -12,6 +12,16 @@ class PagesController extends Controller
         //return view("pages.index", compact('title'));
         return view("pages.index")->with('title', $title);
     }
+    
+    public function orderList()
+    {   
+        $title = 'Order list';
+        $data = array(
+            'name'=> 'Iman',
+            'email'=>'iman@bitmascot.com'
+        );
+        return view("pages.customer-list", compact('title'));
+    }
 
     public function customerList()
     {   
