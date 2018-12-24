@@ -19,3 +19,6 @@ Route::get('/', 'PagesController@index');
 Route::get('/order-list', 'PagesController@orderList');
 Route::get('/customer-list', 'PagesController@customerList');
 Route::resource('categories', 'CategoriesController');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
