@@ -15,6 +15,7 @@ class CategoriesController extends Controller
     public function index()
     {
         $categories = Category::all();
+        //return $categories;
         // echo "<pre>";
         // print_r($categories);
         // echo "</pre>";
