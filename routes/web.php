@@ -18,3 +18,4 @@
 Route::get('/', 'PagesController@index');
 Route::get('/order-list', 'PagesController@orderList');
 Route::get('/customer-list', 'PagesController@customerList');
+Route::resource('categories', 'CategoriesController');
