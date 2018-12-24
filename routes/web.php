@@ -21,4 +21,4 @@ Route::get('/customer-list', 'PagesController@customerList');
 Route::resource('categories', 'CategoriesController');
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
