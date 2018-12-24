@@ -15,13 +15,13 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
-            $this->integer('customer_id');
-            $this->decimal('sub_total', 10, 2);
-            $this->decimal('total_amount', 10, 2);            
-            $this->decimal('gst', 10, 2);
-            $this->string('payment_status');
-            $this->string('response_code');
-            $this->date('order_date');
+            $table->integer('customer_id');
+            $table->decimal('sub_total', 10, 2);
+            $table->decimal('total_amount', 10, 2);            
+            $table->decimal('gst', 10, 2);
+            $table->string('payment_status');
+            $table->string('response_code');
+            //$table->date('order_date');
             $table->timestamps();
         });
     }
