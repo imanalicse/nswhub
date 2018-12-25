@@ -36,13 +36,15 @@ Route::prefix('admin')->group(function () {
     });
 });
 
-Route::group(['prefix' => 'admin',  'middleware' => 'auth'], function()
+Route::group(['namespace'=> 'Admin', 'prefix' => 'admin',  'middleware' => 'auth'], function()
 {
     Route::get('/', function() {
         echo "Dashboard";
     });
-    
+
     Route::get('customer', function() {
         echo "Customer";
     });
+
+    Route::get('/customer-list', 'PagesController@customerList');
 });
