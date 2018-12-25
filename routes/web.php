@@ -17,19 +17,14 @@
 
 Route::get('/', 'PagesController@index');
 Route::get('/order-list', 'PagesController@orderList');
-//Route::get('/customer-list', 'PagesController@customerList');
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
 Route::group(['namespace'=> 'Admin', 'prefix' => 'admin',  'middleware' => 'auth'], function()
 {
-    Route::get('/', function() {
-        echo "Dashboard";
-    });
-    Route::get('/dashboard', function() {
-        echo "Dashboard";
-    });
+    Route::get('/', 'DashboardController@index');
+    Route::get('/dashboard', 'DashboardController@index');
     Route::get('/customer-list', 'CustomersController@index');
     Route::get('/order-list', 'OrdersController@index');
     Route::resource('categories', 'CategoriesController');
