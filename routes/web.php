@@ -18,23 +18,9 @@
 Route::get('/', 'PagesController@index');
 Route::get('/order-list', 'PagesController@orderList');
 //Route::get('/customer-list', 'PagesController@customerList');
-Route::resource('categories', 'CategoriesController');
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
-
-Route::get('profile', function () {
-    // Only authenticated users may enter...
-    Route::get('/customer-list', 'PagesController@customerList');
-})->middleware('auth');
-
-Route::prefix('admin')->group(function () {
-    Route::middleware(['auth'])->group(function () {
-        Route::get('users', function () {
-            echo "Usersss";
-        });
-    });
-});
 
 Route::group(['namespace'=> 'Admin', 'prefix' => 'admin',  'middleware' => 'auth'], function()
 {
@@ -44,4 +30,5 @@ Route::group(['namespace'=> 'Admin', 'prefix' => 'admin',  'middleware' => 'auth
 
     Route::get('/customer-list', 'CustomersController@index');
     Route::get('/order-list', 'OrdersController@index');
+    Route::resource('categories', 'CategoriesController');
 });
