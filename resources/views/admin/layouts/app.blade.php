@@ -10,9 +10,18 @@
         <title>{{config('app.name')}}</title>
     </head>
     <body>
-         @include('admin/includes/navbar')      
-        <div class="container">
-            @yield('content')      
-        </div>
+        <div class="row">
+                <div class="col-md-2">
+                    @include('admin/includes/sidebar')
+                </div>    
+                <div class="col-md-10">
+                    <div class="container">
+                        
+                        @include('admin/includes/navbar')
+
+                        @yield('content')      
+                    </div>
+                        </div>
+                </div>
     </body>
 </html>
