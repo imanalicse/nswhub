@@ -27,7 +27,9 @@ Route::group(['namespace'=> 'Admin', 'prefix' => 'admin',  'middleware' => 'auth
     Route::get('/', function() {
         echo "Dashboard";
     });
-
+    Route::get('/dashboard', function() {
+        echo "Dashboard";
+    });
     Route::get('/customer-list', 'CustomersController@index');
     Route::get('/order-list', 'OrdersController@index');
     Route::resource('categories', 'CategoriesController');
