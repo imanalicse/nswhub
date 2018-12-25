@@ -1,7 +1,5 @@
 @extends('admin.layouts.app')
 
 @section('content')
-
-    Hello customer list    
-    
+    Order list
 @endsection
