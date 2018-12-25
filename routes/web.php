@@ -42,9 +42,5 @@ Route::group(['namespace'=> 'Admin', 'prefix' => 'admin',  'middleware' => 'auth
         echo "Dashboard";
     });
 
-    Route::get('customer', function() {
-        echo "Customer";
-    });
-
-    Route::get('/customer-list', 'PagesController@customerList');
+    Route::get('/customer-list', 'CustomersController@index');
 });
