@@ -38,11 +38,13 @@ class view extends Command
     public function handle()
     {
         $arguments = $this->arguments();
+        $name = $arguments['name'];
         print_r($arguments);
         
-        $my_file = 'resources/views/test.blade.php';
-        $handle = fopen($my_file, 'w');
-        $data = 'This is the data';
+        $my_file = 'resources/views/'.$name.'.blade.php';
+        $handle = fopen($my_file, 'w');        
+        $data = "@extends('admin.layouts.app') \n\n";
+        $data .= "@section('content')";
         fwrite($handle, $data);
         fclose($handle);
     }
